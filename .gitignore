@@ -1,0 +1,13 @@
+# Idea project files
+*.iml
+.idea/
+
+# Build files
+out/
+target/
+
+# Generated sources
+src/generated
+
+# OS specific
+.DS_Store

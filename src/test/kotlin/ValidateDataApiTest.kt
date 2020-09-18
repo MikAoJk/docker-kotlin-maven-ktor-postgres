@@ -3,7 +3,6 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import com.fasterxml.jackson.module.kotlin.registerKotlinModule
-import db.Database
 import io.ktor.application.install
 import io.ktor.features.ContentNegotiation
 import io.ktor.http.HttpMethod
@@ -24,12 +23,12 @@ internal class ValidateDataApiTest {
         .registerModule(JavaTimeModule())
         .registerKotlinModule()
         .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
+    private val database = TestDB()
 
     @Test
     internal fun `Returns OK when input it DATA`() {
         with(TestApplicationEngine()) {
             start()
-            val database = TestDB()
 
             application.routing {
                 registerValidateDataApi(database)
@@ -63,8 +62,6 @@ internal class ValidateDataApiTest {
         with(TestApplicationEngine()) {
             start()
 
-            val database = Database()
-
             application.routing {
                 registerValidateDataApi(database)
             }
@@ -77,17 +74,21 @@ internal class ValidateDataApiTest {
                 }
             }
 
-            val validationData = ValidationData("ABC")
+            val validationData = ValidationData("DATA1")
 
             with(handleRequest(HttpMethod.Post, "/v1/validate")
             {
                 addHeader("Accept", "application/json")
                 addHeader("Content-Type", "application/json")
                 setBody(objectMapper.writeValueAsString(validationData))
+
             }) {
                 response.status() shouldEqual HttpStatusCode.OK
-                response.content shouldEqual objectMapper.writeValueAsString(ValidationResult("WRONG"))
+                response.content shouldEqual objectMapper.writeValueAsString(ValidationResult("INVALID"))
             }
         }
+
+
     }
+
 }

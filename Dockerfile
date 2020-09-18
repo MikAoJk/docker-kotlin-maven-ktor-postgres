@@ -1,5 +1,5 @@
 FROM openjdk:14-jdk-slim
 WORKDIR /app
 EXPOSE 8080
-COPY build/libs/*.jar app.jar
+COPY target/*-jar-with-dependencies.jar app.jar
 CMD ["java", "-jar", "app.jar"]

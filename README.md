@@ -52,4 +52,4 @@ docker-compose -p docker-kotlin-maven-ktor-postgres-compose down
 
 ## Contact us
 ### Code/project related questions can be sent to
-* Joakim Taule Kartveit, `joakim.kartveit@gmail.com`
+* Joakim Taule Kartveit, `joakimkartveit@gmail.com`

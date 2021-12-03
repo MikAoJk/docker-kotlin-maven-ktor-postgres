@@ -1,12 +1,12 @@
 # docker-kotlin-maven-ktor-postgres
-This project is for testing development with docker, kotlin, maven, ktor and postgresSql
+This project is for testing development with docker, kotlin, maven, ktor and postgreSQL
 
 ## Technologies used
 * Kotlin
 * Maven
 * Docker
 * Ktor
-* PostgresSql
+* PostgreSQL
 
 ## Getting started
 ## Running application locally

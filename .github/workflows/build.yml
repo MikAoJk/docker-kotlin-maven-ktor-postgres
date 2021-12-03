@@ -15,4 +15,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@master
       - name: Build with Maven
-        run: mvn -B package --file pom.xml
+        run: ./mvnw clean install

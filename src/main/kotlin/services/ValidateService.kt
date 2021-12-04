@@ -5,7 +5,7 @@ import db.validData
 import kotlinx.coroutines.GlobalScope
 
 
-class ValidateService() {
+class ValidateService {
     fun executeValidateData(validationData: ValidationData, database: DatabaseInterface): ValidationResult =
         with(GlobalScope) {
             if (database.validData(validationData.data)) {

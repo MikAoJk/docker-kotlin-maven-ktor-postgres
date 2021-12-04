@@ -1,7 +1,6 @@
 package application
 
 import api.registerValidateDataApi
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import db.Database
 import io.ktor.application.call
@@ -25,7 +24,6 @@ fun createApplicationEngine(database: Database): ApplicationEngine =
             install(ContentNegotiation) {
                 jackson {
                     registerKotlinModule()
-                    registerModule(JavaTimeModule())
                 }
             }
             install(StatusPages) {

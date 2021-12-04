@@ -1,7 +1,6 @@
 import api.registerValidateDataApi
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import io.ktor.application.install
 import io.ktor.features.ContentNegotiation
@@ -12,15 +11,14 @@ import io.ktor.routing.routing
 import io.ktor.server.testing.TestApplicationEngine
 import io.ktor.server.testing.handleRequest
 import io.ktor.server.testing.setBody
-import org.amshove.kluent.shouldEqual
 import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
 import services.ValidationData
 import services.ValidationResult
 
 internal class ValidateDataApiTest {
 
     private val objectMapper: ObjectMapper = ObjectMapper()
-        .registerModule(JavaTimeModule())
         .registerKotlinModule()
         .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
     private val database = TestDB()
@@ -37,7 +35,6 @@ internal class ValidateDataApiTest {
             application.install(ContentNegotiation) {
                 jackson {
                     registerKotlinModule()
-                    registerModule(JavaTimeModule())
                     configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
                 }
             }
@@ -51,8 +48,8 @@ internal class ValidateDataApiTest {
                 setBody(objectMapper.writeValueAsString(validationData))
 
             }) {
-                response.status() shouldEqual HttpStatusCode.OK
-                response.content shouldEqual objectMapper.writeValueAsString(ValidationResult("OK"))
+                assertEquals(response.status(), HttpStatusCode.OK)
+                assertEquals(response.content, objectMapper.writeValueAsString(ValidationResult("OK")))
             }
         }
     }
@@ -69,7 +66,6 @@ internal class ValidateDataApiTest {
             application.install(ContentNegotiation) {
                 jackson {
                     registerKotlinModule()
-                    registerModule(JavaTimeModule())
                     configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
                 }
             }
@@ -83,8 +79,8 @@ internal class ValidateDataApiTest {
                 setBody(objectMapper.writeValueAsString(validationData))
 
             }) {
-                response.status() shouldEqual HttpStatusCode.OK
-                response.content shouldEqual objectMapper.writeValueAsString(ValidationResult("INVALID"))
+                assertEquals(response.status(), HttpStatusCode.OK)
+                assertEquals(response.content, objectMapper.writeValueAsString(ValidationResult("INVALID")))
             }
         }
 

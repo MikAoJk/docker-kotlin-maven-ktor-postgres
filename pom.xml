@@ -17,13 +17,13 @@
         <kotlin.compiler.jvmTarget>16</kotlin.compiler.jvmTarget>
         <main.class>BootstrapKt</main.class>
         <kotlin.version>1.6.0</kotlin.version>
-        <ktor.version>1.6.6</ktor.version>
-        <junitJupiter.version>5.8.1</junitJupiter.version>
-        <logstashEncoder.version>7.0</logstashEncoder.version>
+        <ktor.version>1.6.7</ktor.version>
+        <junitJupiter.version>5.8.2</junitJupiter.version>
+        <logstashEncoder.version>7.0.1</logstashEncoder.version>
         <logback.version>1.2.7</logback.version>
         <postgresql.version>42.3.1</postgresql.version>
         <hikariCP.version>5.0.0</hikariCP.version>
-        <flyway.version>8.0.2</flyway.version>
+        <flyway.version>8.1.0</flyway.version>
         <otj-pg-embedded.version>0.13.4</otj-pg-embedded.version>
         <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
     </properties>

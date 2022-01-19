@@ -16,14 +16,14 @@
         <kotlin.code.style>official</kotlin.code.style>
         <kotlin.compiler.jvmTarget>16</kotlin.compiler.jvmTarget>
         <main.class>BootstrapKt</main.class>
-        <kotlin.version>1.6.0</kotlin.version>
+        <kotlin.version>1.6.10</kotlin.version>
         <ktor.version>1.6.7</ktor.version>
-        <junitJupiter.version>5.8.2</junitJupiter.version>
+        <junit-jupiter.version>5.8.2</junit-jupiter.version>
         <logstashEncoder.version>7.0.1</logstashEncoder.version>
-        <logback.version>1.2.7</logback.version>
+        <logback.version>1.2.10</logback.version>
         <postgresql.version>42.3.1</postgresql.version>
-        <hikariCP.version>5.0.0</hikariCP.version>
-        <flyway.version>8.1.0</flyway.version>
+        <hikariCP.version>5.0.1</hikariCP.version>
+        <flyway.version>8.4.1</flyway.version>
         <otj-pg-embedded.version>0.13.4</otj-pg-embedded.version>
         <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
     </properties>
@@ -32,28 +32,6 @@
         <repository>
             <id>mavenCentral</id>
             <url>https://repo1.maven.org/maven2/</url>
-        </repository>
-        <repository>
-            <id>jcenter</id>
-            <url>https://jcenter.bintray.com/</url>
-        </repository>
-        <repository>
-            <id>bintray.kotlin.ktor</id>
-            <url>https://dl.bintray.com/kotlin/ktor</url>
-        </repository>
-        <repository>
-            <id>bintray.kotlin.kotlinx</id>
-            <url>https://dl.bintray.com/kotlin/kotlinx</url>
-        </repository>
-        <repository>
-            <id>repo.spring.io.milestone</id>
-            <name>Spring Framework Maven Milestone Repository</name>
-            <url>https://repo.spring.io/libs-milestone</url>
-        </repository>
-        <repository>
-            <id>repo.spring.io.snapshot</id>
-            <name>Spring Framework Maven Snapshot Repository</name>
-            <url>https://repo.spring.io/libs-snapshot</url>
         </repository>
     </repositories>
 
@@ -103,21 +81,14 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>${junitJupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
-            <version>${junitJupiter.version}</version>
+            <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junitJupiter.version}</version>
+            <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -133,10 +104,7 @@
             <version>${otj-pg-embedded.version}</version>
             <scope>test</scope>
         </dependency>
-        <!--
-        remeber to install MS Visual C++ Redistributable Packages for Visual Studio 2013 x64,
-        its some kind of bug with the embedded postgres, should move on to other embedded db lib
-        -->
+
     </dependencies>
 
     <build>

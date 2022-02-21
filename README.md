@@ -52,7 +52,3 @@ Example of a response:
 
 ### Tear down the postgresSql db from docker compose
 docker-compose -p docker-kotlin-maven-ktor-postgres-compose down
-
-## Contact us
-### Code/project related questions can be sent to
-* Joakim Taule Kartveit, `joakimkartveit@gmail.com`

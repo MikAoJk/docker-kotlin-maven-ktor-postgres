@@ -16,7 +16,7 @@
         <kotlin.code.style>official</kotlin.code.style>
         <kotlin.compiler.jvmTarget>16</kotlin.compiler.jvmTarget>
         <main.class>BootstrapKt</main.class>
-        <kotlin.version>1.6.10</kotlin.version>
+        <kotlin.version>1.6.21</kotlin.version>
         <ktor.version>1.6.7</ktor.version>
         <junit-jupiter.version>5.8.2</junit-jupiter.version>
         <logstashEncoder.version>7.0.1</logstashEncoder.version>

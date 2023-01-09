@@ -14,18 +14,19 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <kotlin.code.style>official</kotlin.code.style>
-        <kotlin.compiler.jvmTarget>16</kotlin.compiler.jvmTarget>
+        <kotlin.compiler.jvmTarget>17</kotlin.compiler.jvmTarget>
         <main.class>BootstrapKt</main.class>
-        <kotlin.version>1.6.21</kotlin.version>
-        <ktor.version>1.6.7</ktor.version>
-        <junit-jupiter.version>5.8.2</junit-jupiter.version>
-        <logstashEncoder.version>7.0.1</logstashEncoder.version>
-        <logback.version>1.2.10</logback.version>
-        <postgresql.version>42.3.1</postgresql.version>
+        <kotlin.version>1.8.0</kotlin.version>
+        <ktor.version>2.2.2</ktor.version>
+        <junit-jupiter.version>5.9.0</junit-jupiter.version>
+        <logstashEncoder.version>7.2</logstashEncoder.version>
+        <logback.version>1.4.5</logback.version>
+        <postgresql.version>42.5.1</postgresql.version>
         <hikariCP.version>5.0.1</hikariCP.version>
-        <flyway.version>8.4.1</flyway.version>
-        <otj-pg-embedded.version>0.13.4</otj-pg-embedded.version>
+        <flyway.version>9.11.0</flyway.version>
+        <otj-pg-embedded.version>1.0.1</otj-pg-embedded.version>
         <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
+        <jackson.version>2.14.1</jackson.version>
     </properties>
 
     <repositories>
@@ -43,13 +44,35 @@
         </dependency>
         <dependency>
             <groupId>io.ktor</groupId>
-            <artifactId>ktor-server-netty</artifactId>
+            <artifactId>ktor-server-netty-jvm</artifactId>
             <version>${ktor.version}</version>
         </dependency>
         <dependency>
             <groupId>io.ktor</groupId>
-            <artifactId>ktor-jackson</artifactId>
+            <artifactId>ktor-serialization-jackson-jvm</artifactId>
             <version>${ktor.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.ktor</groupId>
+            <artifactId>ktor-server-status-pages-jvm</artifactId>
+            <version>${ktor.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.ktor</groupId>
+            <artifactId>ktor-server-content-negotiation-jvm</artifactId>
+            <version>${ktor.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.ktor</groupId>
+            <artifactId>ktor-client-content-negotiation-jvm</artifactId>
+            <version>${ktor.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
 
         <dependency>
@@ -94,7 +117,7 @@
 
         <dependency>
             <groupId>io.ktor</groupId>
-            <artifactId>ktor-server-test-host</artifactId>
+            <artifactId>ktor-server-test-host-jvm</artifactId>
             <version>${ktor.version}</version>
         </dependency>
 

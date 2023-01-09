@@ -2,7 +2,8 @@ name: build master branch
 on:
   push:
     branches:
-      - master
+      - '**'
+      - '!master'
 jobs:
   build:
     name: Checkout code and test, clean build

@@ -1,4 +1,4 @@
-FROM openjdk:16-jdk-slim
+FROM openjdk:17-jdk-slim
 WORKDIR /app
 EXPOSE 8080
 COPY target/*-jar-with-dependencies.jar app.jar

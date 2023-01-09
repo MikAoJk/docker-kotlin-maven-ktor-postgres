@@ -4,7 +4,7 @@ This project is for testing development with docker, kotlin, maven, ktor and pos
 [![build master branch](https://github.com/MikAoJk/docker-kotlin-maven-ktor-postgres/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/MikAoJk/docker-kotlin-maven-ktor-postgres/actions/workflows/build.yml)
 
 ## Technologies used
-* JDK 16
+* JDK 17
 * Kotlin
 * Maven
 * Docker
@@ -16,23 +16,34 @@ This project is for testing development with docker, kotlin, maven, ktor and pos
 
 ### Building the application
 #### Compile and package application
-To build locally and run the integration tests you can simply run `./mvnw install` or on windows 
+To build locally and run the integration tests you can simply run
+``` bash
+./mvnw install
+``` 
+or on windows 
 `mvnw.bat install`
 
 #### Creating a docker image
-Creating a docker image should be as simple as `docker build -t docker-kotlin-maven-ktor-postgres .`
+Creating a docker image should be as simple as 
+``` bash
+docker build -t docker-kotlin-maven-ktor-postgres .
+```
 
 #### Running a docker image
-`docker run -d --rm -it -p 8080:8080 docker-kotlin-maven-ktor-postgres`
+``` bash
+docker run -d --rm -it -p 8080:8080 docker-kotlin-maven-ktor-postgres
+```
 on linux: http://0.0.0.0:8080
 on osx: http://0.0.0.0:8080
 on windows : http://127.0.0.1:8080
 
 #### Local testing
 ## Running the postgresSql db from docker compose
+``` bash
 docker-compose -p docker-kotlin-maven-ktor-postgres-compose up -d
+```
 
-## run the main class in your favoritt IDE(Intellij)
+## Run the main class in your favoritt IDE(Intellij)
 Go to src/main/kotlin/Bootstrap.kt and run it
 
 ## Testing the endpoint
@@ -51,4 +62,15 @@ Example of a response:
 `{"result":"OK"}`
 
 ### Tear down the postgresSql db from docker compose
+``` bash
 docker-compose -p docker-kotlin-maven-ktor-postgres-compose down
+```
+
+### Contact
+
+This project is maintained by [CODEOWNERS](CODEOWNERS)
+
+Questions please create an
+[issue](https://github.com/MikAoJk/docker-kotlin-maven-ktor-postgres/issues).
+
+

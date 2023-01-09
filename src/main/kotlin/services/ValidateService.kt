@@ -2,16 +2,16 @@ package services
 
 import db.DatabaseInterface
 import db.validData
-import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.runBlocking
 
 
 class ValidateService {
     fun executeValidateData(validationData: ValidationData, database: DatabaseInterface): ValidationResult =
-        with(GlobalScope) {
+        runBlocking {
             if (database.validData(validationData.data)) {
-                return ValidationResult("OK")
+                return@runBlocking ValidationResult("OK")
             }
-            return ValidationResult("INVALID")
+            return@runBlocking ValidationResult("INVALID")
         }
 }
 

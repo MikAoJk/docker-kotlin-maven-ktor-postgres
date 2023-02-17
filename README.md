@@ -71,6 +71,6 @@ docker-compose -p docker-kotlin-maven-ktor-postgres-compose down
 This project is maintained by [CODEOWNERS](CODEOWNERS)
 
 Questions please create an
-[issue](https://github.com/MikAoJk/docker-kotlin-maven-ktor-postgres/issues).
+[issue](https://github.com/MikAoJk/docker-kotlin-maven-ktor-postgres/issues)
 
 

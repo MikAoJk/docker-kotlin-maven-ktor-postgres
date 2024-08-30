@@ -24,7 +24,7 @@
         <postgresql.version>42.5.5</postgresql.version>
         <hikariCP.version>5.0.1</hikariCP.version>
         <flyway.version>9.11.0</flyway.version>
-        <otj-pg-embedded.version>1.0.1</otj-pg-embedded.version>
+        <otj-pg-embedded.version>1.1.0</otj-pg-embedded.version>
         <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
         <jackson.version>2.14.2</jackson.version>
     </properties>

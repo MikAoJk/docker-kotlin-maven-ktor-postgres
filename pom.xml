@@ -21,7 +21,7 @@
         <junit-jupiter.version>5.9.2</junit-jupiter.version>
         <logstashEncoder.version>7.3</logstashEncoder.version>
         <logback.version>1.4.5</logback.version>
-        <postgresql.version>42.5.1</postgresql.version>
+        <postgresql.version>42.5.5</postgresql.version>
         <hikariCP.version>5.0.1</hikariCP.version>
         <flyway.version>9.11.0</flyway.version>
         <otj-pg-embedded.version>1.0.1</otj-pg-embedded.version>

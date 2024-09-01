@@ -4,7 +4,7 @@ This project is for testing development with docker, kotlin, maven, ktor and pos
 [![build master branch](https://github.com/MikAoJk/docker-kotlin-maven-ktor-postgres/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/MikAoJk/docker-kotlin-maven-ktor-postgres/actions/workflows/build.yml)
 
 ## Technologies used
-* JDK 17
+* JDK 21
 * Kotlin
 * Maven
 * Docker

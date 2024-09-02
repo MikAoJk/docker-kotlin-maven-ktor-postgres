@@ -20,7 +20,7 @@
         <ktor.version>2.3.12</ktor.version>
         <junit-jupiter.version>5.11.0</junit-jupiter.version>
         <logstashEncoder.version>8.0</logstashEncoder.version>
-        <logback.version>1.4.5</logback.version>
+        <logback.version>1.5.7</logback.version>
         <postgresql.version>42.7.4</postgresql.version>
         <hikariCP.version>5.1.0</hikariCP.version>
         <flyway.version>10.17.2</flyway.version>

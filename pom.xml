@@ -23,7 +23,7 @@
         <logback.version>1.5.7</logback.version>
         <postgresql.version>42.7.4</postgresql.version>
         <hikariCP.version>5.1.0</hikariCP.version>
-        <flyway.version>10.17.2</flyway.version>
+        <flyway.version>10.17.3</flyway.version>
         <otj-pg-embedded.version>1.1.0</otj-pg-embedded.version>
         <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
         <jackson.version>2.17.2</jackson.version>

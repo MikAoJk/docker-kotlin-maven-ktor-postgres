@@ -18,7 +18,7 @@
         <main.class>BootstrapKt</main.class>
         <kotlin.version>2.0.20</kotlin.version>
         <ktor.version>2.3.12</ktor.version>
-        <junit-jupiter.version>5.11.0</junit-jupiter.version>
+        <junit-jupiter.version>5.11.1</junit-jupiter.version>
         <logstashEncoder.version>8.0</logstashEncoder.version>
         <logback.version>1.5.8</logback.version>
         <postgresql.version>42.7.4</postgresql.version>

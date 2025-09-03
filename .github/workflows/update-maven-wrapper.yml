@@ -1,0 +1,43 @@
+name: Update Maven Wrapper
+
+on:
+  schedule:
+    - cron: '0 4 * * 1'
+  workflow_dispatch:
+
+jobs:
+  update-maven-wrapper:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Get latest Maven Wrapper version
+        id: maven-version
+        run: |
+          LATEST_URL="https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/"
+          LATEST_VERSION=$(curl -s $LATEST_URL | grep -oP '(?<=href=")[0-9]+\.[0-9]+\.[0-9]+(?=/")' | sort -V | tail -n1)
+          echo "latest=$LATEST_VERSION" >> $GITHUB_OUTPUT
+
+      - name: Update Maven Wrapper
+        run: |
+          ./mvnw -N io.takari:maven:wrapper -Dmaven=3.9.6
+        env:
+          MAVEN_WRAPPER_VERSION: ${{ steps.maven-version.outputs.latest }}
+
+      - name: Commit and create PR if changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore: update Maven Wrapper to latest version"
+          title: "Update Maven Wrapper to ${{ steps.maven-version.outputs.latest }}"
+          body: |
+            This PR updates the Maven Wrapper scripts and jar to the latest version (${{ steps.maven-version.outputs.latest }}).
+          branch: update-maven-wrapper
+          delete-branch: true
+          labels: dependencies, maven

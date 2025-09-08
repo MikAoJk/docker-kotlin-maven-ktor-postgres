@@ -28,6 +28,10 @@ jobs:
       - name: Update Maven Wrapper
         run: |
           ./mvnw wrapper:wrapper 
+
+      - name: Build
+        run: |
+          ./mvnw clean build 
           
       - name: Commit and create PR if changes
         uses: peter-evans/create-pull-request@v6

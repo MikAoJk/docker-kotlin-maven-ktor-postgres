@@ -28,9 +28,7 @@ jobs:
       - name: Update Maven Wrapper
         run: |
           ./mvnw wrapper:wrapper -Dmaven=${{ steps.maven-version.outputs.latest }}
-        env:
-          MAVEN_WRAPPER_VERSION: ${{ steps.maven-version.outputs.latest }}
-
+  
       - name: Commit and create PR if changes
         uses: peter-evans/create-pull-request@v6
         with:

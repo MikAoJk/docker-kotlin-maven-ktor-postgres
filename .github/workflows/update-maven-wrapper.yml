@@ -31,7 +31,7 @@ jobs:
 
       - name: Build
         run: |
-          ./mvnw clean build 
+          ./mvnw clean install 
           
       - name: Commit and create PR if changes
         uses: peter-evans/create-pull-request@v6

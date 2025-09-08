@@ -25,7 +25,7 @@ jobs:
 
       - name: Update Maven Wrapper
         run: |
-          ./mvnw -N io.takari:maven:wrapper -Dmaven=3.9.6
+          ./mvnw wrapper:wrapper -Dmaven=${{ steps.maven-version.outputs.latest }}
         env:
           MAVEN_WRAPPER_VERSION: ${{ steps.maven-version.outputs.latest }}
 
